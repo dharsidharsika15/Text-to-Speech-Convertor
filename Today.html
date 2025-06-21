@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- <table>
+            <tr>
+                <td><input type="text" placeholder="Enter Name" id="name"></td>
+            </tr>
+            <tr>
+                <td> <input type="text" placeholder="Enter img src" id="img"></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Enter Bio" id="bio"></td>
+            </tr>
+            <tr>
+                <td><button onclick="updateBio()"><b>Submit</b></button></td>        
+            </tr>
+        </table> -->
+        <input type="text" placeholder="Enter Name" id="name">
+        <input type="text" placeholder="Enter img src" id="img">
+        <input type="text" placeholder="Enter Bio" id="bio">
+        <button onclick="updateBio()"><b>Submit</b></button>  <!-- inline script -->
+    </div>
+    <div>
+        <h1 id="h1">Name</h1>
+        <img src="https://t3.ftcdn.net/jpg/01/22/72/98/360_F_122729880_a4rHgPGiwVktwwsovKfL2iqrd2vM042R.jpg" alt="IT Logo" id="src">
+        <h1 id="h2">Bio</h1>
+    </div>
+
+    <script>
+        function updateBio(){
+           let Name = document.getElementById("name").value;
+           let Img = document.getElementById("img").value;
+           let Bio = document.getElementById("bio").value;
+           document.getElementById("h1").innerHTML = Name;
+           document.getElementById("src").src = Img;   // In line 27, bcoz it is a img, so src property is used
+           document.getElementById("h2").innerHTML = Bio;
+        }
+    </script>
+
+</body>
+</html>

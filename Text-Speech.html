@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speak</title>
+
+    <link rel="stylesheet" href="Text-Speech.css">
+
+</head>
+<body>
+    <div id="container">
+        <h1>Text to Speech</h1>
+        <textarea id="textTospeak" placeholder="Enter text..."></textarea>
+        <button onclick="speakText()"><b>Speak</b></button>
+    </div>
+    
+    <script>
+        var speech = new SpeechSynthesisUtterance();  // Web Speech API
+        function speakText(){
+           var TextToSpeak = document.getElementById("textTospeak").value;
+           if (TextToSpeak.trim() !== ""){  // .trim() - is a method, removes any empty spaces from start/end. If it's not an empty string, then it speaks the text
+              speech.text = TextToSpeak;
+              speech.rate = 1;    // Speed of speech (0.5-slow, 1-normal, 2-fast)
+              speech.volume = 1;  // Volume (0.0 to 1.0) 
+              speech.pitch = 1;   // Voice pitch is normal pitch
+              window.speechSynthesis.speak(speech); // starts speaking the text out loud
+           }
+           else{
+              alert("Please enter some text.")
+           }
+        }
+    </script>
+
+</body>
+</html>
